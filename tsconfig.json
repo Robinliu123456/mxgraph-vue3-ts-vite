@@ -16,8 +16,14 @@
     ],
     "skipLibCheck": true,
     "typeRoots": [
+      "./node_modules/@types",
       "./node_modules/@typed-mxgraph"
-    ]
+    ],
+    "paths": {
+      "@": [
+        "./src"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
