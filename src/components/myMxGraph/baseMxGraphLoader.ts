@@ -1,6 +1,6 @@
 import factory from "mxgraph";
 
-interface myGraphConfig {
+interface myMxGraphConfig {
     mxBasePath?: string;
     mxDefaultLanguage?: string;
     mxImageBasePath?: string;
@@ -11,7 +11,7 @@ interface myGraphConfig {
     mxResourceExtension?: string;
 }
 
-const initConfig = (myConfig: myGraphConfig) => {
+const initConfig = (myConfig: myMxGraphConfig) => {
     (window as any)["mxBasePath"] = myConfig.mxBasePath || ".";
     (window as any)["mxDefaultLanguage"] = myConfig.mxDefaultLanguage || "en";
     (window as any)["mxImageBasePath"] = myConfig.mxImageBasePath || "./images";
@@ -24,10 +24,10 @@ const initConfig = (myConfig: myGraphConfig) => {
         myConfig.mxResourceExtension || ".txt";
 };
 
-const loadMyMxGraph = (config: myGraphConfig) => {
+const myMxFactory = (config: myMxGraphConfig) => {
     initConfig(config);
 
     return factory({});
 };
 
-export default loadMyMxGraph;
+export default myMxFactory;

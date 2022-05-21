@@ -20,10 +20,8 @@ import ExampleList from "./Example/ExampleList.vue";
             <UseVue3Guide></UseVue3Guide>
         </div>
         <div class="row">
-            <h1>
-                示例
-                <span> 参照官方的例子使用vue3进行重写 </span>
-            </h1>
+            <h1>示例</h1>
+            <p>参照官方的例子使用vue3进行重写</p>
             <ExampleList></ExampleList>
         </div>
     </div>
