@@ -1,16 +1,60 @@
-# Vue 3 + TypeScript + Vite
+# 在Vue3+Vite+TypeScript中使用mxGraph
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 官方文档
+[mxGraph 4.2.2 - GitHub Pages](https://jgraph.github.io/mxgraph/)
 
-## Recommended IDE Setup
+## 使用
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+1. 安装
+```shell
+# 使用yarn
+yarn add mxgraph -S
+yarn add @typed-mxgraph/typed-mxgraph -D
+```
+2. 处理静态资源
+将`/node_modules/mxgraph/javascript/src/`下的文件复制到`/public/mxgraph-base`目录。
 
-## Type Support For `.vue` Imports in TS
+3. 开始使用
+```typescript
+// loadMxGraph.ts
+import factory from "mxgraph";
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+(window as any)["mxBasePath"] = "/mxgraph-base";
+(window as any)["mxDefaultLanguage"] = "en";
+(window as any)["mxImageBasePath"] = "/mxgraph-base/images";
+(window as any)["mxLoadResources"] = false;
+(window as any)["mxLoadStylesheets"] = false;
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+// 当通过commonjs加载时为false, 否则会向页面加载script
+(window as any)["mxForceIncludes"] = false;
+(window as any)["mxResourceExtension"] = ".txt";
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+const mx = factory({});
+```
+script
+```typescript
+// page.vue script
+import { type mxGraph } from "mxgraph";
+import { onMounted, ref, Ref } from "vue";
+import mx from "./loadMxGraph";
+
+const editorRef: Ref<HTMLDivElement | undefined> = ref();
+const currentGraph: Ref<mxGraph | undefined> = ref();
+
+onMounted(() => {
+    if (editorRef.value) {
+        init(editorRef.value);
+    }
+});
+
+const init = (container: HTMLDivElement) => {
+    mx.mxEvent.disableContextMenu(container);
+    const graph = new mx.mxGraph(container);
+    currentGraph.value = graph;
+};
+
+```
+template
+```html
+<div class="flow-editor" ref="editorRef"></div>
+```
