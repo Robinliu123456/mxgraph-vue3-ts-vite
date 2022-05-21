@@ -27,9 +27,14 @@ interface IExampleInfo {
 }
 const examples: Array<IExampleInfo> = [
     {
-        label: "anchors",
+        label: "Anchors",
         name: "anchors",
         description: "Define fixed connection points for all shapes",
+    },
+    {
+        label: "Animation",
+        name: "Animation",
+        description: "Using SVG animation to visualize the flow in a pipe",
     },
 ];
 

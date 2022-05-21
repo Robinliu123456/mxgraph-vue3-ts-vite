@@ -11,6 +11,11 @@ const ExamplesRoutes: Array<RouteRecordRaw> = [
                 component: () => import("../components/Examples/anchors.vue"),
                 name: "anchors",
             },
+            {
+                path: "animation",
+                component: () => import("../components/Examples/Animation.vue"),
+                name: "Animation",
+            },
         ],
     },
 ];
