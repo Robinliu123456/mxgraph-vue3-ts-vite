@@ -17,6 +17,6 @@ const factoryOption: mxGraphOptions = {
 (window as any)["mxForceIncludes"] = false; // 当通过commonjs加载时为false, 否则会向页面加载script
 (window as any)["mxResourceExtension"] = ".txt";
 
-const mxInstance = factory({});
+const mx = factory({});
 
-export default mxInstance;
+export default mx;
