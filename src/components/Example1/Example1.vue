@@ -1,6 +1,3 @@
-<template>
-    <div class="flow-editor" ref="editorRef"></div>
-</template>
 <script setup lang="ts">
 import { mxGraph } from "mxgraph";
 import { onMounted, ref, Ref } from "vue";
@@ -21,6 +18,11 @@ const init = (container: HTMLDivElement) => {
     currentGraph.value = graph;
 };
 </script>
+
+<template>
+    <div class="flow-editor" ref="editorRef"></div>
+</template>
+
 <style scoped>
 .flow-editor {
     overflow: auto;
