@@ -25,6 +25,19 @@ interface IExampleInfo {
     name: string;
     description?: string;
 }
+
+class ExampleInfo implements IExampleInfo {
+    constructor(label: string, name: string, description?: string) {
+        this.label = label;
+        this.name = name;
+        this.description = description;
+    }
+
+    label: string;
+    name: string;
+    description?: string | undefined;
+}
+
 const examples: Array<IExampleInfo> = [
     {
         label: "Anchors",
@@ -36,6 +49,11 @@ const examples: Array<IExampleInfo> = [
         name: "Animation",
         description: "Using SVG animation to visualize the flow in a pipe",
     },
+    new ExampleInfo(
+        "AutoLayout",
+        "AutoLayout",
+        "Running and animating a layout algorithm after every change to a graph."
+    ),
 ];
 
 const jumpToExample = (name: string) => {

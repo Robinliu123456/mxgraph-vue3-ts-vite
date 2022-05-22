@@ -24,6 +24,7 @@ const currentGraph: Ref<mxGraph | undefined> = ref();
 
 const init = (container: HTMLElement) => {
     const graph = new myMxGraph(container);
+    graph.setEnabled(false);
     currentGraph.value = graph;
 
     const parent = graph.getDefaultParent();

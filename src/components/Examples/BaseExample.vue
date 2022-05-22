@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type mxGraph } from "mxgraph";
 import { onMounted, ref, Ref } from "vue";
-import { myMxGraph } from "./myMxGraph/myMxGraphLoader";
+import { myMxGraph } from "../myMxGraph/myMxGraphLoader";
 
 const editorRef: Ref<HTMLDivElement | undefined> = ref();
 const currentGraph: Ref<mxGraph | undefined> = ref();

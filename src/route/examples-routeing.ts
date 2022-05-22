@@ -8,13 +8,19 @@ const ExamplesRoutes: Array<RouteRecordRaw> = [
         children: [
             {
                 path: "anchors",
-                component: () => import("../components/Examples/anchors.vue"),
+                component: () => import("../components/Examples/Anchors.vue"),
                 name: "anchors",
             },
             {
                 path: "animation",
                 component: () => import("../components/Examples/Animation.vue"),
                 name: "Animation",
+            },
+            {
+                path: "autolayout",
+                component: () =>
+                    import("../components/Examples/Autolayout.vue"),
+                name: "AutoLayout",
             },
         ],
     },
