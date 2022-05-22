@@ -54,6 +54,11 @@ const examples: Array<IExampleInfo> = [
         "AutoLayout",
         "Running and animating a layout algorithm after every change to a graph."
     ),
+    new ExampleInfo(
+        "Boundary",
+        "Boundary",
+        "Implementing boundary events in BPMN diagrams."
+    ),
 ];
 
 const jumpToExample = (name: string) => {

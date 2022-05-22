@@ -22,6 +22,11 @@ const ExamplesRoutes: Array<RouteRecordRaw> = [
                     import("../components/Examples/Autolayout.vue"),
                 name: "AutoLayout",
             },
+            {
+                path: "boundary",
+                component: () => import("../components/Examples/Boundary.vue"),
+                name: "Boundary",
+            },
         ],
     },
 ];
