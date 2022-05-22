@@ -27,6 +27,11 @@ const ExamplesRoutes: Array<RouteRecordRaw> = [
                 component: () => import("../components/Examples/Boundary.vue"),
                 name: "Boundary",
             },
+            {
+                path: "helloport",
+                component: () => import("../components/Examples/HelloPort.vue"),
+                name: "HelloPort",
+            },
         ],
     },
 ];

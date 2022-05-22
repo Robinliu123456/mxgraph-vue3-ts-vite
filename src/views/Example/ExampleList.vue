@@ -59,6 +59,11 @@ const examples: Array<IExampleInfo> = [
         "Boundary",
         "Implementing boundary events in BPMN diagrams."
     ),
+    new ExampleInfo(
+        "HelloPort",
+        "HelloPort",
+        "Using the isPort hook for visually connecting to another cell"
+    ),
 ];
 
 const jumpToExample = (name: string) => {
