@@ -51,26 +51,6 @@ const init = (container: HTMLElement) => {
     const stye = graph.getStylesheet().getDefaultEdgeStyle();
     stye[myMxConstants.STYLE_EDGE] = myMxEdgeStyle.ElbowConnector;
 
-    // graph.isPort = function (cell) {
-    //     var geo = this.getCellGeometry(cell);
-
-    //     return geo != null ? geo.relative : false;
-    // };
-
-    // // Implements a tooltip that shows the actual
-    // // source and target of an edge
-    // graph.getTooltipForCell = function (cell) {
-    //     if (this.model.isEdge(cell)) {
-    //         return (
-    //             this.convertValueToString(this.model.getTerminal(cell, true)) +
-    //             " => " +
-    //             this.convertValueToString(this.model.getTerminal(cell, false))
-    //         );
-    //     }
-
-    //     return myMxGraph.prototype.getTooltipForCell.apply(myMxGraph, [cell]);
-    // };
-
     new myMxRubberband(graph);
 
     const parent = graph.getDefaultParent();
