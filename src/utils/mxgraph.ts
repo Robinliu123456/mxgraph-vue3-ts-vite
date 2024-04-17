@@ -1,3 +1,4 @@
+// TS封装📦mxgraph，引入工具类函数，进行流程图开发，有区别于vue2+js的写法
 import factory, { mxGraphOptions } from "mxgraph";
 
 const factoryOption: mxGraphOptions = {
